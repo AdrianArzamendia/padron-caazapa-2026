@@ -1,0 +1,1505 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Padrón Electoral Caazapá 2026</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap');
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --rojo:#C0392B;
+  --rojo-oscuro:#8F2118;
+  --rojo-claro:#E74C3C;
+  --blanco:#fff;
+  --fondo:#f3f4f6;
+  --texto:#202124;
+  --gris:#6b7280;
+  --borde:#e2e4e8;
+  --verde:#2f7f35;
+  --sombra:0 10px 30px rgba(15,23,42,.08);
+}
+
+body{
+  font-family:'Source Sans 3',sans-serif;
+  background:linear-gradient(180deg,#f7f8fa 0%,#f2f3f5 100%);
+  color:var(--texto);
+  min-height:100vh;
+  transition:background .2s,color .2s;
+}
+
+header{
+  background:linear-gradient(135deg,#8d2117 0%,#be3429 55%,#d84235 100%);
+  color:#fff;
+}
+
+.header-inner{
+  max-width:980px;
+  margin:0 auto;
+  padding:30px 20px 28px;
+  text-align:center;
+}
+
+.brand-line{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+.badge,.status-pill{
+  display:inline-block;
+  border-radius:999px;
+  padding:7px 12px;
+  font-family:'Oswald',sans-serif;
+  font-size:.72rem;
+  letter-spacing:.09em;
+}
+
+.badge{
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.25);
+}
+
+.status-pill{
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.22);
+  opacity:.9;
+}
+
+h1{
+  font-family:'Oswald',sans-serif;
+  font-size:clamp(1.8rem,4vw,2.5rem);
+  font-weight:700;
+  margin-top:12px;
+  letter-spacing:.02em;
+}
+
+.subtitle{
+  margin-top:5px;
+  font-size:1.05rem;
+  font-weight:500;
+  letter-spacing:.04em;
+}
+
+.date{
+  margin-top:4px;
+  font-size:.88rem;
+  letter-spacing:.10em;
+  opacity:.9;
+}
+
+.theme-switch{
+  display:flex;
+  justify-content:center;
+  gap:6px;
+  margin-top:15px;
+}
+
+.theme-btn{
+  min-height:38px;
+  padding:8px 13px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.35);
+  background:rgba(255,255,255,.10);
+  color:#fff;
+  font-family:'Oswald',sans-serif;
+  font-size:.74rem;
+  letter-spacing:.05em;
+  cursor:pointer;
+}
+
+.theme-btn:hover{background:rgba(255,255,255,.18)}
+
+.theme-btn.active{
+  background:#fff;
+  color:var(--rojo-oscuro);
+  border-color:#fff;
+}
+
+.hero-strip{
+  background:#fff;
+  border-bottom:1px solid #ececef;
+}
+
+.hero-inner{
+  max-width:980px;
+  margin:0 auto;
+  padding:21px 20px 22px;
+  text-align:center;
+}
+
+.eyebrow{
+  font-family:'Oswald',sans-serif;
+  font-size:.68rem;
+  letter-spacing:.15em;
+  color:var(--rojo);
+  font-weight:600;
+}
+
+.hero-copy h2{
+  font-family:'Oswald',sans-serif;
+  font-size:1.55rem;
+  margin-top:2px;
+}
+
+.hero-copy p{
+  margin-top:4px;
+  color:#70757d;
+  font-size:.93rem;
+}
+
+nav{
+  max-width:980px;
+  margin:16px auto 0;
+  display:flex;
+  background:#fff;
+  border:1px solid var(--borde);
+  border-radius:14px;
+  box-shadow:var(--sombra);
+  overflow:hidden;
+}
+
+.tab{
+  flex:1;
+  min-height:56px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:'Oswald',sans-serif;
+  font-size:.88rem;
+  letter-spacing:.08em;
+  color:#757a81;
+  cursor:pointer;
+  border-bottom:3px solid transparent;
+  user-select:none;
+}
+
+.tab:hover{background:#fafafa;color:#333}
+
+.tab.active{
+  color:var(--rojo);
+  border-bottom-color:var(--rojo);
+  background:#fff;
+}
+
+main{
+  max-width:980px;
+  margin:0 auto;
+  padding:18px 20px 42px;
+}
+
+.page{display:none}
+.page.active{display:block}
+
+.card{
+  background:#fff;
+  border:1px solid #e8eaed;
+  border-radius:18px;
+  box-shadow:var(--sombra);
+  overflow:visible;
+}
+
+.card-head{
+  padding:23px 24px 16px;
+  border-bottom:1px solid #ececef;
+}
+
+.card-head h2{
+  font-family:'Oswald',sans-serif;
+  font-size:1.32rem;
+}
+
+.card-head p{
+  margin-top:5px;
+  color:var(--rojo);
+  font-size:.88rem;
+  font-weight:600;
+}
+
+.card-body{padding:22px 24px 26px}
+
+.label{
+  font-family:'Oswald',sans-serif;
+  font-size:.70rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:#656a71;
+  margin-bottom:6px;
+}
+
+.input-row{
+  display:flex;
+  gap:10px;
+  align-items:stretch;
+}
+
+.search-space{margin-bottom:16px}
+
+input{
+  width:100%;
+  min-height:54px;
+  border:1.5px solid #d8dbe0;
+  border-radius:12px;
+  padding:13px 16px;
+  font-size:1.04rem;
+  background:#fbfbfc;
+  color:var(--texto);
+  outline:none;
+}
+
+input:focus{
+  border-color:#c83a2e;
+  background:#fff;
+  box-shadow:0 0 0 4px rgba(192,57,43,.09);
+}
+
+button{
+  min-height:54px;
+  border:0;
+  border-radius:12px;
+  padding:12px 20px;
+  font-family:'Oswald',sans-serif;
+  font-size:.96rem;
+  letter-spacing:.06em;
+  cursor:pointer;
+  background:var(--rojo);
+  color:#fff;
+}
+
+button:hover{background:var(--rojo-oscuro)}
+
+button:disabled{
+  opacity:.62;
+  cursor:default;
+}
+
+.secondary{background:#5e6369}
+.secondary:hover{background:#454a4f}
+
+.result{
+  margin-top:20px;
+  background:#fff;
+  border:1px solid #e5e7eb;
+  border-radius:18px;
+  box-shadow:0 12px 32px rgba(15,23,42,.08);
+  overflow:hidden;
+}
+
+.result-head{
+  background:linear-gradient(90deg,#8f2118,#c73a2f);
+  color:#fff;
+  font-family:'Oswald',sans-serif;
+  text-align:center;
+  padding:15px 20px;
+  font-size:1rem;
+  letter-spacing:.06em;
+}
+
+.result-body{padding:22px 24px 24px}
+
+.data-highlight{margin-bottom:16px}
+
+.highlight-card.primary{
+  min-height:88px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  border-radius:16px;
+  background:linear-gradient(135deg,#9d281d,#c73a2f);
+  color:#fff;
+}
+
+.highlight-card .small{
+  font-family:'Source Sans 3',sans-serif;
+  font-size:.72rem;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  color:#777d84;
+}
+
+.highlight-card.primary .small{color:#fff;opacity:.9}
+
+.highlight-card .large{
+  font-family:'Oswald',sans-serif;
+  font-size:1.78rem;
+  color:var(--rojo);
+  margin-top:2px;
+}
+
+.highlight-card.primary .large{
+  color:#fff;
+  font-size:1.72rem;
+  letter-spacing:.04em;
+}
+
+.result-location{
+  background:#fcf8f7;
+  border:1px solid #f0dfdc;
+  border-left:4px solid var(--rojo);
+  border-radius:14px;
+  padding:15px 18px;
+  margin-bottom:11px;
+}
+
+.loc-label{
+  font-family:'Oswald',sans-serif;
+  color:#b53227;
+  font-size:.69rem;
+  text-transform:uppercase;
+  letter-spacing:.13em;
+  font-weight:600;
+}
+
+.loc-value{
+  color:#24282d;
+  font-size:1.04rem;
+  font-weight:600;
+  line-height:1.35;
+  margin-top:2px;
+}
+
+.result-name-row{
+  display:flex;
+  align-items:flex-start;
+  gap:16px;
+  padding:14px 15px;
+  margin-top:10px;
+  background:#fbfbfc;
+  border:1px solid var(--borde);
+  border-radius:12px;
+}
+
+.key{
+  min-width:92px;
+  color:#a92d23;
+  font-family:'Oswald',sans-serif;
+  font-size:.72rem;
+  text-transform:uppercase;
+  letter-spacing:.13em;
+  font-weight:600;
+}
+
+.val{
+  flex:1;
+  font-size:1.04rem;
+  line-height:1.35;
+}
+
+.val.big{
+  font-family:'Oswald',sans-serif;
+  font-size:1.16rem;
+}
+
+.mesa-orden-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin-top:13px;
+}
+
+.mesa-orden-grid .highlight-card{
+  min-height:94px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  border:1px solid var(--borde);
+  border-radius:16px;
+  background:#fff;
+}
+
+.mesa-orden-grid .large{color:var(--rojo);font-size:1.8rem}
+
+.actions{
+  display:flex;
+  gap:11px;
+  justify-content:center;
+  flex-wrap:wrap;
+  border-top:1px solid #ececef;
+  padding-top:18px;
+  margin-top:18px;
+}
+
+.actions button{
+  min-width:185px;
+}
+
+.btn-print{background:#454a50}
+.btn-print:hover{background:#31353a}
+
+.btn-save{background:var(--verde)}
+.btn-save:hover{background:#27672c}
+
+.new-search-wrap{
+  text-align:center;
+  margin-top:16px;
+}
+
+.btn-new-search{
+  min-width:210px;
+  background:linear-gradient(135deg,#8f2118,#b72f23);
+}
+
+.notfound{
+  text-align:center;
+  color:#70757d;
+  background:#fafafa;
+  border:1px solid #ececee;
+  border-radius:12px;
+  padding:18px;
+}
+
+.notice{
+  border:1px dashed #d6d8dc;
+  border-radius:11px;
+  background:#fafafa;
+  color:#6d7278;
+  padding:11px 13px;
+  font-size:.86rem;
+  margin-bottom:10px;
+}
+
+.autocomplete-wrap{position:relative}
+
+.suggestions{
+  position:absolute;
+  left:0;
+  right:0;
+  top:100%;
+  z-index:100;
+  display:none;
+  max-height:320px;
+  overflow-y:auto;
+  background:#fff;
+  border:1px solid #dddfe3;
+  border-top:0;
+  border-radius:0 0 12px 12px;
+  box-shadow:0 10px 24px rgba(15,23,42,.10);
+}
+
+.suggestion-item{
+  padding:13px 15px;
+  border-bottom:1px solid #ececef;
+  cursor:pointer;
+}
+
+.suggestion-item:last-child{border-bottom:0}
+
+.suggestion-item:hover,
+.suggestion-item.active{
+  background:#faf0ee;
+}
+
+.suggestion-name{
+  font-family:'Oswald',sans-serif;
+  font-size:.98rem;
+  color:#222;
+  font-weight:600;
+}
+
+.suggestion-meta{
+  margin-top:2px;
+  font-size:.78rem;
+  color:#777d84;
+}
+
+.privacy-note{
+  margin-top:12px;
+  text-align:center;
+  color:#858a90;
+  font-size:.74rem;
+  line-height:1.4;
+}
+
+footer{
+  text-align:center;
+  color:#747a80;
+  background:#fff;
+  border-top:1px solid #e8e9eb;
+  padding:20px 12px 30px;
+  font-size:.84rem;
+}
+
+.dev{
+  margin-top:4px;
+  font-family:'Oswald',sans-serif;
+  color:#454a50;
+  letter-spacing:.04em;
+}
+
+/* MODO OSCURO */
+body.dark-mode{
+  --texto:#f2f4f7;
+  --gris:#aeb4bc;
+  --borde:#343941;
+  background:linear-gradient(180deg,#141619 0%,#1b1e22 100%);
+}
+
+body.dark-mode .hero-strip,
+body.dark-mode nav,
+body.dark-mode .card,
+body.dark-mode footer{
+  background:#1b1e22;
+  color:var(--texto);
+  border-color:#30343a;
+}
+
+body.dark-mode .tab{
+  background:#1b1e22;
+  color:#a4aab2;
+}
+
+body.dark-mode .tab.active{
+  color:#ff8c80;
+  border-bottom-color:#d95e51;
+}
+
+body.dark-mode .hero-copy h2,
+body.dark-mode .card-head h2{
+  color:#f2f4f7;
+}
+
+body.dark-mode .hero-copy p,
+body.dark-mode footer,
+body.dark-mode .privacy-note{
+  color:#aeb4bc;
+}
+
+body.dark-mode .card-head{
+  background:#1b1e22;
+  border-bottom-color:#30343a;
+}
+
+body.dark-mode input{
+  background:#111315;
+  border-color:#3a3f46;
+  color:#f2f4f7;
+}
+
+body.dark-mode input::placeholder{color:#818791}
+
+body.dark-mode .result{
+  background:#1b1e22;
+  border-color:#343941;
+}
+
+body.dark-mode .result-name-row,
+body.dark-mode .mesa-orden-grid .highlight-card{
+  background:#202328;
+  border-color:#343941;
+}
+
+body.dark-mode .result-location{
+  background:#241d1c;
+  border-color:#47302d;
+  border-left-color:#d85a4e;
+}
+
+body.dark-mode .loc-value,
+body.dark-mode .val{
+  color:#f0f2f4;
+}
+
+body.dark-mode .suggestions{
+  background:#1d2024;
+  border-color:#393e45;
+}
+
+body.dark-mode .suggestion-item{
+  border-bottom-color:#30343a;
+}
+
+body.dark-mode .suggestion-item:hover,
+body.dark-mode .suggestion-item.active{
+  background:#292326;
+}
+
+body.dark-mode .suggestion-name{color:#f2f3f5}
+body.dark-mode .suggestion-meta{color:#aab0b7}
+
+body.dark-mode .notice,
+body.dark-mode .notfound{
+  background:#202328;
+  border-color:#343941;
+  color:#aeb4bc;
+}
+
+body.dark-mode .actions{border-top-color:#30343a}
+body.dark-mode .dev{color:#c5cad0}
+
+@media(max-width:700px){
+  .header-inner{padding:24px 16px 22px}
+  .hero-inner{padding:18px 16px 20px}
+  main{padding:14px 12px 34px}
+  nav{margin:12px 12px 0}
+  .card-body,.result-body{padding:18px 16px 21px}
+  .input-row{flex-wrap:wrap}
+  .input-row input{flex:1 1 100%}
+  .input-row button{flex:1 1 0;min-width:120px}
+  .result-name-row{flex-direction:column;gap:5px}
+  .result-name-row .key{min-width:0}
+  .actions{flex-direction:column}
+  .actions button,.btn-new-search{width:100%;min-width:0}
+}
+
+@media(max-width:430px){
+  h1{font-size:1.55rem}
+  .subtitle{font-size:.95rem}
+  .date{font-size:.80rem}
+  .tab{font-size:.75rem}
+  .mesa-orden-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="brand-line">
+      <div class="badge">PADRÓN ELECTORAL</div>
+      <div class="status-pill">CONSULTA DE ELECTORES</div>
+    </div>
+    <h1>ELECCIONES GENERALES 2026</h1>
+    <div class="subtitle">DEPARTAMENTO DE CAAZAPÁ</div>
+    <div class="date">04 DE OCTUBRE DE 2026</div>
+
+    <div class="theme-switch" role="group" aria-label="Modo de visualización">
+      <button type="button" class="theme-btn active" id="themeLight">☀️ CLARO</button>
+      <button type="button" class="theme-btn" id="themeDark">🌙 OSCURO</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero-strip">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <div class="eyebrow">PADRÓN DEPARTAMENTAL</div>
+      <h2>Encontrá tu lugar de votación</h2>
+      <p>Consultá por número de cédula o buscá por nombre y apellido.</p>
+    </div>
+  </div>
+</section>
+
+<nav>
+  <div class="tab active" id="tab-ci">🔎 CÉDULA</div>
+  <div class="tab" id="tab-nombre">👤 NOMBRE</div>
+</nav>
+
+<main>
+
+  <section class="page active" id="page-ci">
+    <div class="card">
+      <div class="card-head">
+        <h2>Consultar por número de cédula</h2>
+        <p>Ingresá tu número de cédula sin puntos.</p>
+      </div>
+
+      <div class="card-body">
+        <div class="label">Número de cédula</div>
+
+        <div class="input-row">
+          <input id="ciInput" type="text" inputmode="numeric" autocomplete="off"
+                 placeholder="Ej.: 1234567">
+          <button type="button" id="btnBuscarCI">BUSCAR</button>
+          <button type="button" class="secondary" id="btnLimpiarCI">LIMPIAR</button>
+        </div>
+
+        <div id="resultadoCI"></div>
+
+        <div id="nuevaBusquedaCI" class="new-search-wrap" style="display:none">
+          <button type="button" class="btn-new-search" id="btnNuevaCI">↻ NUEVA BÚSQUEDA</button>
+        </div>
+
+        <div class="privacy-note">
+          Datos en base al Registro Cívico Permanente (RCP).
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page" id="page-nombre">
+    <div class="card">
+      <div class="card-head">
+        <h2>Consultar por nombre y apellido</h2>
+        <p>Escribí para ver coincidencias y seleccioná una persona.</p>
+      </div>
+
+      <div class="card-body">
+        <div class="search-space autocomplete-wrap">
+          <div class="label">Nombre y apellido</div>
+          <input id="nombreInput" type="text" autocomplete="off"
+                 placeholder="Ej.: Juan Pérez">
+          <div id="sugerenciasNombre" class="suggestions"></div>
+        </div>
+
+        <div class="input-row">
+          <button type="button" id="btnBuscarNombre">BUSCAR</button>
+          <button type="button" class="secondary" id="btnLimpiarNombre">LIMPIAR</button>
+        </div>
+
+        <div id="resultadoNombre"></div>
+
+        <div id="nuevaBusquedaNombre" class="new-search-wrap" style="display:none">
+          <button type="button" class="btn-new-search" id="btnNuevaNombre">↻ NUEVA BÚSQUEDA</button>
+        </div>
+
+        <div class="privacy-note">
+          Datos en base al Registro Cívico Permanente (RCP).
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  Consulta del padrón departamental
+  <div class="dev">Creado por Lic. Adrian Arzamendia</div>
+</footer>
+
+<script>
+/* Compatibilidad adicional con Safari/iOS antiguos. No modifica el diseño ni los datos. */
+if (!Element.prototype.closest) {
+  Element.prototype.closest = function(selector) {
+    var el = this;
+    while (el) {
+      if (el.matches ? el.matches(selector) : false) return el;
+      el = el.parentElement;
+    }
+    return null;
+  };
+}
+let PADRON = [];
+let padronListo = false;
+
+function cargarPadron(){
+  return fetch('./padron.json', { cache: 'no-store' })
+    .then(function(response){
+      if(!response.ok) throw new Error('No se pudo cargar el padrón');
+      return response.json();
+    })
+    .then(function(data){
+      if(!Array.isArray(data)) throw new Error('Formato de padrón inválido');
+      PADRON = data;
+      padronListo = true;
+    })
+    .catch(function(error){
+      console.error(error);
+      padronListo = false;
+    });
+}
+
+let sugerenciasActuales = [];
+let indiceSugerencia = -1;
+let ultimaConsulta = null;
+
+function normalizar(texto){
+  return String(texto || '')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toUpperCase()
+    .replace(/[^A-Z0-9Ñ ]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function escapeHtml(valor){
+  return String(valor == null ? '' : valor).replace(/[&<>"']/g, function(ch){
+    return {
+      '&':'&amp;',
+      '<':'&lt;',
+      '>':'&gt;',
+      '"':'&quot;',
+      "'":'&#039;'
+    }[ch];
+  });
+}
+
+function setTheme(theme){
+  const dark = theme === 'dark';
+
+  document.body.classList.toggle('dark-mode', dark);
+
+  document.getElementById('themeLight').classList.toggle('active', !dark);
+  document.getElementById('themeDark').classList.toggle('active', dark);
+
+  try{
+    localStorage.setItem('padronTheme', dark ? 'dark' : 'light');
+  }catch(error){}
+}
+
+function loadTheme(){
+  let theme = 'light';
+
+  try{
+    theme = localStorage.getItem('padronTheme') || 'light';
+  }catch(error){}
+
+  setTheme(theme);
+}
+
+function showPage(tab){
+  document.querySelectorAll('.page').forEach(function(page){
+    page.classList.remove('active');
+  });
+
+  document.querySelectorAll('.tab').forEach(function(item){
+    item.classList.remove('active');
+  });
+
+  document.getElementById('page-' + tab).classList.add('active');
+  document.getElementById('tab-' + tab).classList.add('active');
+}
+
+function setUltimaConsulta(e){
+  ultimaConsulta = {
+    cedula: e.cedula,
+    nombre: (String(e.nombre || '') + ' ' + String(e.apellido || '')).trim(),
+    distrito: e.distrito,
+    local: e.local,
+    mesa: e.mesa,
+    orden: e.orden
+  };
+}
+
+function buscarCI(){
+  const input = document.getElementById('ciInput');
+  if(!padronListo){
+    document.getElementById('resultadoCI').innerHTML = '<div class="notfound">El padrón todavía está cargando. Esperá unos segundos y volvé a intentar.</div>';
+    return;
+  }
+  const box = document.getElementById('resultadoCI');
+  const ci = input.value.replace(/\D/g, '');
+
+  if(!ci){
+    box.innerHTML = '<div class="notfound">Ingresá un número de cédula.</div>';
+    return;
+  }
+
+  const encontrados = PADRON.filter(function(e){
+    return String(e.cedula).replace(/\D/g, '') === ci;
+  });
+
+  if(!encontrados.length){
+    box.innerHTML = '<div class="notfound">No se encontró un elector con esa cédula.</div>';
+    document.getElementById('nuevaBusquedaCI').style.display = 'block';
+    return;
+  }
+
+  setUltimaConsulta(encontrados[0]);
+  box.innerHTML = formatearResultado(encontrados[0]);
+
+  input.disabled = true;
+  document.getElementById('btnBuscarCI').disabled = true;
+  document.getElementById('btnLimpiarCI').disabled = false;
+  document.getElementById('nuevaBusquedaCI').style.display = 'block';
+}
+
+function limpiarCI(){
+  const input = document.getElementById('ciInput');
+
+  input.value = '';
+  input.disabled = false;
+
+  document.getElementById('btnBuscarCI').disabled = false;
+  document.getElementById('resultadoCI').innerHTML = '';
+  document.getElementById('nuevaBusquedaCI').style.display = 'none';
+
+  ultimaConsulta = null;
+
+  input.focus();
+}
+
+function buscarNombre(){
+  if(!padronListo){
+    document.getElementById('resultadoNombre').innerHTML = '<div class="notfound">El padrón todavía está cargando. Esperá unos segundos y volvé a intentar.</div>';
+    return;
+  }
+  const texto = normalizar(document.getElementById('nombreInput').value);
+  const box = document.getElementById('resultadoNombre');
+
+  if(!texto){
+    box.innerHTML = '<div class="notfound">Ingresá un nombre o apellido.</div>';
+    return;
+  }
+
+  const resultados = buscarCoincidenciasNombre(texto, 100);
+
+  cerrarSugerencias();
+
+  if(!resultados.length){
+    box.innerHTML = '<div class="notfound">No se encontraron coincidencias.</div>';
+    return;
+  }
+
+  box.innerHTML =
+    '<div class="notice">Se encontraron ' + resultados.length +
+    ' coincidencias. Las coincidencias más precisas aparecen primero.</div>' +
+    resultados.map(function(e){
+      return formatearResultadoCompacto(e);
+    }).join('');
+}
+
+function puntuarCoincidencia(e, texto){
+  const consulta = normalizar(texto);
+  const palabras = consulta.split(' ').filter(Boolean);
+  const nombre = normalizar(e.nombre);
+  const apellido = normalizar(e.apellido);
+  const completo = normalizar(nombre + ' ' + apellido);
+
+  if(!palabras.length) return -1;
+
+  let mejor = 0;
+
+  // Coincidencia exacta con nombre completo.
+  if(consulta === completo) mejor = Math.max(mejor, 1000);
+
+  // Coincidencia por prefijo del nombre completo.
+  if(completo.startsWith(consulta)) mejor = Math.max(mejor, 900);
+
+  // Todas las palabras aparecen, aunque estén repartidas.
+  if(palabras.every(function(p){ return completo.includes(p); })){
+    mejor = Math.max(mejor, 500);
+  }else{
+    return -1;
+  }
+
+  // Cuando hay varias palabras, probamos todas las divisiones posibles
+  // para distinguir "Adrian Arzamendia" de personas que solo contienen
+  // ambos textos en cualquier parte.
+  if(palabras.length >= 2){
+    for(let corte = 1; corte < palabras.length; corte++){
+      const parteNombre = palabras.slice(0, corte).join(' ');
+      const parteApellido = palabras.slice(corte).join(' ');
+
+      let score = 0;
+
+      if(nombre === parteNombre) score += 420;
+      else if(nombre.startsWith(parteNombre)) score += 300;
+      else if(parteNombre.split(' ').every(function(p){ return nombre.includes(p); })) score += 220;
+      else score = -1;
+
+      if(score >= 0){
+        if(apellido === parteApellido) score += 420;
+        else if(apellido.startsWith(parteApellido)) score += 300;
+        else if(parteApellido.split(' ').every(function(p){ return apellido.includes(p); })) score += 220;
+        else score = -1;
+      }
+
+      if(score >= 0) mejor = Math.max(mejor, score + 250);
+    }
+  }
+
+  // Una sola palabra: priorizar nombre exacto/prefijo antes que apellido.
+  if(palabras.length === 1){
+    const p = palabras[0];
+    if(nombre === p) mejor = Math.max(mejor, 760);
+    else if(nombre.startsWith(p)) mejor = Math.max(mejor, 620);
+    else if(apellido === p) mejor = Math.max(mejor, 560);
+    else if(apellido.startsWith(p)) mejor = Math.max(mejor, 500);
+  }
+
+  return mejor;
+}
+
+function buscarCoincidenciasNombre(texto, limite){
+  const resultados = [];
+
+  for(let i = 0; i < PADRON.length; i++){
+    const e = PADRON[i];
+    const score = puntuarCoincidencia(e, texto);
+
+    if(score >= 0){
+      resultados.push({e:e, score:score, index:i});
+    }
+  }
+
+  resultados.sort(function(a,b){
+    if(b.score !== a.score) return b.score - a.score;
+
+    const na = normalizar(String(a.e.nombre || '') + ' ' + String(a.e.apellido || ''));
+    const nb = normalizar(String(b.e.nombre || '') + ' ' + String(b.e.apellido || ''));
+
+    return na.localeCompare(nb);
+  });
+
+  return resultados.slice(0, limite).map(function(item){ return item.e; });
+}
+
+function autocompletarNombre(){
+  const input = document.getElementById('nombreInput');
+  const texto = normalizar(input.value);
+  const box = document.getElementById('sugerenciasNombre');
+
+  if(texto.length < 2){
+    cerrarSugerencias();
+    return;
+  }
+
+  sugerenciasActuales = buscarCoincidenciasNombre(texto, 12);
+  indiceSugerencia = -1;
+
+  if(!sugerenciasActuales.length){
+    box.innerHTML =
+      '<div class="suggestion-item">' +
+        '<div class="suggestion-name">Sin coincidencias</div>' +
+        '<div class="suggestion-meta">Probá con otra parte del nombre.</div>' +
+      '</div>';
+    box.style.display = 'block';
+    return;
+  }
+
+  box.innerHTML = sugerenciasActuales.map(function(e, index){
+    return '<div class="suggestion-item" data-index="' + index + '">' +
+             '<div class="suggestion-name">' + escapeHtml((String(e.nombre || '') + ' ' + String(e.apellido || '')).trim()) + '</div>' +
+             '<div class="suggestion-meta">C.I. ' + escapeHtml(e.cedula) + ' · ' + escapeHtml(e.distrito) + '</div>' +
+           '</div>';
+  }).join('');
+
+  box.style.display = 'block';
+}
+
+function seleccionarSugerencia(index){
+  const e = sugerenciasActuales[index];
+
+  if(!e) return;
+
+  const input = document.getElementById('nombreInput');
+
+  input.value = (String(e.nombre || '') + ' ' + String(e.apellido || '')).trim();
+  input.disabled = true;
+
+  setUltimaConsulta(e);
+  document.getElementById('resultadoNombre').innerHTML = formatearResultado(e);
+
+  document.getElementById('sugerenciasNombre').style.display = 'none';
+  document.getElementById('nuevaBusquedaNombre').style.display = 'block';
+
+  indiceSugerencia = -1;
+}
+
+function navegarSugerencias(event){
+  const box = document.getElementById('sugerenciasNombre');
+
+  if(box.style.display !== 'block' || !sugerenciasActuales.length) return;
+
+  if(event.key === 'ArrowDown'){
+    event.preventDefault();
+    indiceSugerencia = (indiceSugerencia + 1) % sugerenciasActuales.length;
+    resaltarSugerencia();
+  }else if(event.key === 'ArrowUp'){
+    event.preventDefault();
+    indiceSugerencia = (indiceSugerencia - 1 + sugerenciasActuales.length) % sugerenciasActuales.length;
+    resaltarSugerencia();
+  }else if(event.key === 'Enter'){
+    if(indiceSugerencia >= 0){
+      event.preventDefault();
+      seleccionarSugerencia(indiceSugerencia);
+    }else{
+      buscarNombre();
+    }
+  }else if(event.key === 'Escape'){
+    cerrarSugerencias();
+  }
+}
+
+function resaltarSugerencia(){
+  document.querySelectorAll('#sugerenciasNombre .suggestion-item').forEach(function(el, index){
+    el.classList.toggle('active', index === indiceSugerencia);
+  });
+}
+
+function cerrarSugerencias(){
+  const box = document.getElementById('sugerenciasNombre');
+  box.style.display = 'none';
+  box.innerHTML = '';
+  sugerenciasActuales = [];
+  indiceSugerencia = -1;
+}
+
+function limpiarNombre(){
+  const input = document.getElementById('nombreInput');
+
+  input.value = '';
+  input.disabled = false;
+
+  document.getElementById('resultadoNombre').innerHTML = '';
+  document.getElementById('nuevaBusquedaNombre').style.display = 'none';
+
+  cerrarSugerencias();
+
+  ultimaConsulta = null;
+
+  input.focus();
+}
+
+function nuevaBusqueda(tipo){
+  if(tipo === 'ci'){
+    limpiarCI();
+  }else if(tipo === 'nombre'){
+    limpiarNombre();
+  }
+}
+
+function formatearResultado(e){
+  const nombreCompleto = (String(e.nombre || '') + ' ' + String(e.apellido || '')).trim();
+
+  return '<div class="result">' +
+    '<div class="result-head">ELECTOR ENCONTRADO</div>' +
+    '<div class="result-body">' +
+
+      '<div class="data-highlight">' +
+        '<div class="highlight-card primary">' +
+          '<div class="small">C.I.</div>' +
+          '<div class="large">' + escapeHtml(e.cedula) + '</div>' +
+        '</div>' +
+      '</div>' +
+
+      '<div class="result-location">' +
+        '<div class="loc-label">Distrito</div>' +
+        '<div class="loc-value">' + escapeHtml(e.distrito) + '</div>' +
+      '</div>' +
+
+      '<div class="result-location">' +
+        '<div class="loc-label">Local de votación</div>' +
+        '<div class="loc-value">' + escapeHtml(e.local) + '</div>' +
+      '</div>' +
+
+      '<div class="result-name-row">' +
+        '<div class="key">Nombre</div>' +
+        '<div class="val big">' + escapeHtml(nombreCompleto) + '</div>' +
+      '</div>' +
+
+      '<div class="mesa-orden-grid">' +
+        '<div class="highlight-card">' +
+          '<div class="small">Mesa</div>' +
+          '<div class="large">' + escapeHtml(e.mesa) + '</div>' +
+        '</div>' +
+        '<div class="highlight-card">' +
+          '<div class="small">Orden</div>' +
+          '<div class="large">' + escapeHtml(e.orden) + '</div>' +
+        '</div>' +
+      '</div>' +
+
+      '<div class="actions">' +
+        '<button type="button" class="btn-print" onclick="imprimirConsulta()">🖨 IMPRIMIR CONSULTA</button>' +
+        '<button type="button" class="btn-save" onclick="guardarConsulta()">💾 GUARDAR CONSULTA</button>' +
+      '</div>' +
+
+    '</div>' +
+  '</div>';
+}
+
+function formatearResultadoCompacto(e){
+  return '<div class="result" style="margin-top:12px">' +
+    '<div class="result-head">' +
+      escapeHtml((String(e.nombre || '') + ' ' + String(e.apellido || '')).trim()) +
+    '</div>' +
+    '<div class="result-body">' +
+      '<div class="row"><div class="key">C.I.</div><div class="val">' + escapeHtml(e.cedula) + '</div></div>' +
+      '<div class="row"><div class="key">Distrito</div><div class="val">' + escapeHtml(e.distrito) + '</div></div>' +
+      '<div class="row"><div class="key">Local</div><div class="val">' + escapeHtml(e.local) + '</div></div>' +
+      '<div class="row"><div class="key">Mesa</div><div class="val">' + escapeHtml(e.mesa) + '</div></div>' +
+      '<div class="row"><div class="key">Orden</div><div class="val">' + escapeHtml(e.orden) + '</div></div>' +
+    '</div>' +
+  '</div>';
+}
+
+function imprimirConsulta(){
+  if(!ultimaConsulta) return;
+
+  const e = ultimaConsulta;
+
+  const contenido =
+    '<!DOCTYPE html><html lang="es"><head>' +
+    '<meta charset="UTF-8">' +
+    '<title>Consulta del padrón</title>' +
+    '<style>' +
+      'body{font-family:Arial,sans-serif;padding:32px;color:#222}' +
+      'h1{text-align:center;color:#8f2118;font-size:24px;margin-bottom:6px}' +
+      'h2{text-align:center;font-size:16px;margin-bottom:24px}' +
+      '.box{border:1px solid #ccc;border-radius:12px;padding:20px;max-width:720px;margin:20px auto}' +
+      '.row{padding:10px 0;border-bottom:1px solid #eee}' +
+      '.row:last-child{border-bottom:0}' +
+      '.k{font-weight:bold;color:#8f2118}' +
+      '.footer{text-align:center;margin-top:28px;font-size:12px;color:#666}' +
+    '</style></head><body>' +
+      '<h1>PADRÓN ELECTORAL</h1>' +
+      '<h2>ELECCIONES GENERALES 2026 · CAAZAPÁ · 04 DE OCTUBRE DE 2026</h2>' +
+      '<div class="box">' +
+        '<div class="row"><span class="k">C.I.:</span> ' + escapeHtml(e.cedula) + '</div>' +
+        '<div class="row"><span class="k">Distrito:</span> ' + escapeHtml(e.distrito) + '</div>' +
+        '<div class="row"><span class="k">Local de votación:</span> ' + escapeHtml(e.local) + '</div>' +
+        '<div class="row"><span class="k">Nombre:</span> ' + escapeHtml(e.nombre) + '</div>' +
+        '<div class="row"><span class="k">Mesa:</span> ' + escapeHtml(e.mesa) + '</div>' +
+        '<div class="row"><span class="k">Orden:</span> ' + escapeHtml(e.orden) + '</div>' +
+      '</div>' +
+      '<div class="footer">Creado por Lic. Adrian Arzamendia</div>' +
+    '</body></html>';
+
+  const w = window.open('', '_blank', 'width=850,height=750');
+
+  if(!w){
+    alert('El navegador bloqueó la ventana de impresión. Permití ventanas emergentes para este sitio.');
+    return;
+  }
+
+  w.document.open();
+  w.document.write(contenido);
+  w.document.close();
+  w.focus();
+
+  setTimeout(function(){
+    w.print();
+  }, 250);
+}
+
+function roundRect(ctx,x,y,w,h,r){
+  ctx.beginPath();
+  ctx.moveTo(x+r,y);
+  ctx.arcTo(x+w,y,x+w,y+h,r);
+  ctx.arcTo(x+w,y+h,x,y+h,r);
+  ctx.arcTo(x,y+h,x,y,r);
+  ctx.arcTo(x,y,x+w,y,r);
+  ctx.closePath();
+}
+
+function roundRectTop(ctx,x,y,w,h,r){
+  ctx.beginPath();
+  ctx.moveTo(x+r,y);
+  ctx.lineTo(x+w-r,y);
+  ctx.quadraticCurveTo(x+w,y,x+w,y+r);
+  ctx.lineTo(x+w,y+h);
+  ctx.lineTo(x,y+h);
+  ctx.lineTo(x,y+r);
+  ctx.quadraticCurveTo(x,y,x+r,y);
+  ctx.closePath();
+}
+
+function fitText(ctx,text,maxWidth,size){
+  let current = size;
+
+  while(current > 14){
+    ctx.font = '600 ' + current + 'px Arial';
+    if(ctx.measureText(text).width <= maxWidth){
+      return text;
+    }
+    current -= 1;
+  }
+
+  return text;
+}
+
+function drawInfoBox(ctx,x,y,w,h,label,value,color){
+  ctx.fillStyle = color;
+  roundRect(ctx,x,y,w,h,18);
+  ctx.fill();
+
+  ctx.fillStyle = '#fff';
+  ctx.textAlign = 'center';
+  ctx.font = '700 15px Arial';
+  ctx.fillText(label,x+w/2,y+27);
+
+  ctx.font = '700 30px Arial';
+  ctx.fillText(fitText(ctx,value,w-50,30),x+w/2,y+59);
+}
+
+function drawField(ctx,x,y,label,value){
+  ctx.fillStyle = '#b53227';
+  ctx.textAlign = 'left';
+  ctx.font = '700 14px Arial';
+  ctx.fillText(label,x,y);
+
+  ctx.fillStyle = '#1f2328';
+  ctx.font = '600 22px Arial';
+  ctx.fillText(fitText(ctx,value,1000,22),x,y+31);
+}
+
+function drawMiniBox(ctx,x,y,w,h,label,value){
+  ctx.fillStyle = '#fff';
+  ctx.strokeStyle = '#e1e3e7';
+  ctx.lineWidth = 2;
+  roundRect(ctx,x,y,w,h,16);
+  ctx.fill();
+  ctx.stroke();
+
+  ctx.fillStyle = '#7a7f86';
+  ctx.textAlign = 'center';
+  ctx.font = '700 13px Arial';
+  ctx.fillText(label,x+w/2,y+26);
+
+  ctx.fillStyle = '#b53227';
+  ctx.font = '700 30px Arial';
+  ctx.fillText(value,x+w/2,y+61);
+}
+
+function guardarConsulta(){
+  if(!ultimaConsulta) return;
+
+  const e = ultimaConsulta;
+  const W = 1200;
+  const H = 820;
+
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+
+  canvas.width = W;
+  canvas.height = H;
+
+  ctx.fillStyle = '#f4f5f7';
+  ctx.fillRect(0,0,W,H);
+
+  const x = 70;
+  const y = 55;
+  const w = W - 140;
+  const h = H - 110;
+
+  ctx.fillStyle = '#fff';
+  roundRect(ctx,x,y,w,h,24);
+  ctx.fill();
+
+  const headerH = 120;
+  const grad = ctx.createLinearGradient(x,y,x+w,y);
+  grad.addColorStop(0,'#8f2118');
+  grad.addColorStop(1,'#c73a2f');
+
+  ctx.fillStyle = grad;
+  roundRectTop(ctx,x,y,w,headerH,24);
+  ctx.fill();
+
+  ctx.fillStyle = '#fff';
+  ctx.textAlign = 'center';
+
+  ctx.font = '700 34px Arial';
+  ctx.fillText('PADRÓN ELECTORAL',W/2,y+48);
+
+  ctx.font = '600 23px Arial';
+  ctx.fillText('ELECCIONES GENERALES 2026 · CAAZAPÁ',W/2,y+84);
+
+  ctx.fillStyle = '#b53227';
+  ctx.textAlign = 'left';
+  ctx.font = '700 22px Arial';
+  ctx.fillText('CONSULTA DE ELECTOR',x+50,y+165);
+
+  drawInfoBox(ctx,x+50,y+190,w-100,74,'C.I.',String(e.cedula),'#9d281d');
+
+  let cy = y+305;
+
+  drawField(ctx,x+50,cy,'DISTRITO',String(e.distrito));
+  cy += 82;
+
+  drawField(ctx,x+50,cy,'LOCAL DE VOTACIÓN',String(e.local));
+  cy += 110;
+
+  drawField(ctx,x+50,cy,'NOMBRE',String(e.nombre));
+  const nombreCompleto = (String(e.nombre || '') + ' ' + String(e.apellido || '')).trim();
+
+  ctx.fillStyle = '#1f2328';
+  ctx.font = '600 22px Arial';
+  ctx.fillText(fitText(ctx,nombreCompleto,1000,22),x+50,cy+31);
+
+  cy += 90;
+  cy -= 8;
+
+  drawMiniBox(ctx,x+50,cy,(w-130)/2,78,'MESA',String(e.mesa));
+  drawMiniBox(ctx,x+80+(w-130)/2,cy,(w-130)/2,78,'ORDEN',String(e.orden));
+
+  ctx.fillStyle = '#858a90';
+  ctx.textAlign = 'center';
+  ctx.font = '15px Arial';
+  ctx.fillText('Creado por Lic. Adrian Arzamendia',W/2,y+h-28);
+
+  canvas.toBlob(function(blob){
+    if(!blob){
+      alert('No fue posible generar la imagen JPG.');
+      return;
+    }
+
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    const ci = String(e.cedula || '').replace(/\D/g,'') || 'elector';
+
+    a.href = url;
+    a.download = 'consulta_padron_' + ci + '.jpg';
+
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+
+    setTimeout(function(){
+      URL.revokeObjectURL(url);
+    },1000);
+  },'image/jpeg',0.95);
+}
+
+document.addEventListener('click',function(event){
+  const item = event.target.closest('#sugerenciasNombre .suggestion-item');
+  if(item && item.dataset.index !== undefined){
+    seleccionarSugerencia(Number(item.dataset.index));
+    return;
+  }
+
+  const wrap = document.querySelector('.autocomplete-wrap');
+  const box = document.getElementById('sugerenciasNombre');
+
+  if(wrap && box && !wrap.contains(event.target)){
+    cerrarSugerencias();
+  }
+});
+
+document.getElementById('tab-ci').addEventListener('click',function(){
+  showPage('ci');
+});
+
+document.getElementById('tab-nombre').addEventListener('click',function(){
+  showPage('nombre');
+});
+
+document.getElementById('btnBuscarCI').addEventListener('click',buscarCI);
+document.getElementById('btnLimpiarCI').addEventListener('click',limpiarCI);
+document.getElementById('btnNuevaCI').addEventListener('click',function(){
+  nuevaBusqueda('ci');
+});
+
+document.getElementById('btnBuscarNombre').addEventListener('click',buscarNombre);
+document.getElementById('btnLimpiarNombre').addEventListener('click',limpiarNombre);
+document.getElementById('btnNuevaNombre').addEventListener('click',function(){
+  nuevaBusqueda('nombre');
+});
+
+document.getElementById('ciInput').addEventListener('keydown',function(event){
+  if(event.key === 'Enter'){
+    event.preventDefault();
+    buscarCI();
+  }
+});
+
+document.getElementById('nombreInput').addEventListener('input',function(){
+  if(!this.disabled){
+    autocompletarNombre();
+  }
+});
+
+document.getElementById('nombreInput').addEventListener('keydown',navegarSugerencias);
+
+document.getElementById('themeLight').addEventListener('click',function(){
+  setTheme('light');
+});
+
+document.getElementById('themeDark').addEventListener('click',function(){
+  setTheme('dark');
+});
+
+loadTheme();
+cargarPadron();
+</script>
+
+</body>
+</html>
